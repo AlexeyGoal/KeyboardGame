@@ -3,7 +3,6 @@ import sys
 from game_state import GameState
 from word_manager import WordManager
 from ui import UI
-from sound import SoundManager
 from stats import Stats
 
 class KeyboardZen:
@@ -15,11 +14,10 @@ class KeyboardZen:
         self.font_large = pygame.font.Font(None, 72)
         self.font_medium = pygame.font.Font(None, 36)
         
-        self.sound = SoundManager()
         self.stats = Stats()
         self.word_manager = WordManager()
         self.ui = UI(self.screen, self.font_large, self.font_medium)
-        self.game_state = GameState(self.word_manager, self.sound, self.stats, self.ui)
+        self.game_state = GameState(self.word_manager, self.stats, self.ui)
         
         self.running = True
         
